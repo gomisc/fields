@@ -41,7 +41,7 @@ type FieldExtractor interface {
 	Float64(key string, value float64)
 	Str(key string, value string)
 	Strings(key string, values []string)
-	Any(key string, value interface{})
+	Any(key string, value any)
 }
 
 type Extractor interface {

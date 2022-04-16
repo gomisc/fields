@@ -5,8 +5,8 @@ import (
 )
 
 type field struct {
-	val       fieldValue
-	key       string
+	val fieldValue
+	key string
 }
 
 func (f *field) Key() string {
@@ -82,7 +82,7 @@ func Stringer(key string, val fmt.Stringer) Field {
 }
 
 func Any(key string, val interface{}) Field {
-	return &field{key: key, val: any{val: val}}
+	return &field{key: key, val: anything{val: val}}
 }
 
 func Error(err error) Field {

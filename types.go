@@ -2,23 +2,23 @@ package fields
 
 // fields types
 type (
-	b    bool
-	i    int
-	i8   int8
-	i16  int16
-	i32  int32
-	i64  int64
-	u    uint
-	u8   uint8
-	u16  uint16
-	u32  uint32
-	u64  uint64
-	f32  float32
-	f64  float64
-	str  string
-	strs []string
-	any  struct {
-		val interface{}
+	b        bool
+	i        int
+	i8       int8
+	i16      int16
+	i32      int32
+	i64      int64
+	u        uint
+	u8       uint8
+	u16      uint16
+	u32      uint32
+	u64      uint64
+	f32      float32
+	f64      float64
+	str      string
+	strs     []string
+	anything struct {
+		val any
 	}
 )
 
@@ -82,7 +82,6 @@ func (v strs) Extract(key string, extractor FieldExtractor) {
 	extractor.Strings(key, v)
 }
 
-func (v any) Extract(key string, extractor FieldExtractor) {
+func (v anything) Extract(key string, extractor FieldExtractor) {
 	extractor.Any(key, v.val)
 }
-
