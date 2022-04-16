@@ -3,8 +3,22 @@ type: docker
 name: develop
 
 steps:
-- name: unit-test
-  image: "golang:1.18"
-  commands:
-    - go test ./...
+  - name: linter
+    image: "local/go-runner:1.18"
+    when:
+      branch:
+        - master
+      event:
+        - push
+    commands:
+      - golangci-lint run -c golangci.yml
 
+  - name: unit-test
+    image: "local/go-runner:1.18"
+    when:
+      branch:
+        - master
+      event:
+        - push
+    commands:
+      - go test ./... -cover
