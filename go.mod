@@ -1,3 +1,3 @@
 module git.corout.in/golibs/fields
 
-go 1.18
+go 1.17
