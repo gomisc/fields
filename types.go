@@ -18,7 +18,7 @@ type (
 	str      string
 	strs     []string
 	anything struct {
-		val any
+		val interface{}
 	}
 )
 
