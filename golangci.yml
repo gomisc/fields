@@ -7,7 +7,7 @@ output:
 
 linters-settings:
   goimports:
-    local-prefixes: git.corout.in/golibs/fields
+    local-prefixes: git.eth4.dev/golibs/fields
   dogsled:
     # максимальное количество пропускаемых пустых строк
     max-blank-identifiers: 2
