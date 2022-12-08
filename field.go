@@ -86,5 +86,5 @@ func Any(key string, val interface{}) Field {
 }
 
 func Error(err error) Field {
-	return &field{key: "error", val: str(err.Error())}
+	return &field{key: "error", val: anything{val: err}}
 }
