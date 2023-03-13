@@ -1,3 +1,3 @@
-module git.eth4.dev/golibs/fields
+module gopkg.in/gomisc/fields.v1
 
 go 1.18
